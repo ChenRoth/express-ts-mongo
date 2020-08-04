@@ -7,6 +7,7 @@ const {JWT_SECRET = 'secret'} = process.env;
 
 const app = express();
 
+app.use(express.json());
 app.use(cors());
 // comment out this line if you want to bypass JWT check during development
 app.use(expressJwt({secret: JWT_SECRET}).unless({path: '/'}));
